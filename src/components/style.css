@@ -1,0 +1,171 @@
+.h-icon {
+  display: inline-block;
+  overflow: visible;
+  vertical-align: -0.2em;
+}
+
+/* FLIP */
+.h-icon-flip-horizontal {
+  transform: scale(-1, 1);
+}
+.h-icon-flip-vertical {
+  transform: scale(1, -1);
+}
+.h-icon-flip-both {
+  transform: scale(-1, -1);
+}
+.h-icon-inverse {
+  color: #fff;
+}
+
+/* ANIMATIONS */
+/* ---------------- spin ---------------- */
+.h-icon-spin:not(.h-icon-hover) > g,
+.h-icon-spin.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin > g {
+  animation: h-icon-spin 1s linear infinite;
+}
+
+.h-icon-spin:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-spin.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin.h-icon-fast > g {
+  animation: h-icon-spin 0.7s linear infinite;
+}
+
+.h-icon-spin:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-spin.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin.h-icon-slow > g {
+  animation: h-icon-spin 2s linear infinite;
+}
+
+.h-icon-spin-pulse:not(.h-icon-hover) > g,
+.h-icon-spin-pulse.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin-pulse > g {
+  animation: h-icon-spin 1s infinite steps(8);
+}
+
+.h-icon-spin-pulse:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-spin-pulse.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin-pulse.h-icon-fast > g {
+  animation: h-icon-spin 0.7s infinite steps(8);
+}
+
+.h-icon-spin-pulse:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-spin-pulse.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-spin-pulse.h-icon-slow > g {
+  animation: h-icon-spin 2s infinite steps(8);
+}
+
+@keyframes h-icon-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------------- wrench ---------------- */
+.h-icon-wrench:not(.h-icon-hover) > g,
+.h-icon-wrench.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-wrench > g {
+  animation: h-icon-wrench 2.5s ease infinite;
+}
+
+.h-icon-wrench:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-wrench.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-wrench.h-icon-fast > g {
+  animation: h-icon-wrench 1.2s ease infinite;
+}
+
+.h-icon-wrench:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-wrench.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-wrench.h-icon-slow > g {
+  animation: h-icon-wrench 3.7s ease infinite;
+}
+
+@keyframes h-icon-wrench {
+  0% { transform: rotate(-12deg); }
+  8% { transform: rotate(12deg); }
+  10%, 28%, 30%, 48%, 50%, 68% { transform: rotate(24deg); }
+  18%, 20%, 38%, 40%, 58%, 60% { transform: rotate(-24deg); }
+  75%, 100% { transform: rotate(0deg); }
+}
+
+/* ---------------- ring ---------------- */
+.h-icon-ring:not(.h-icon-hover) > g,
+.h-icon-ring.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-ring > g {
+  animation: h-icon-ring 2s ease infinite;
+}
+
+.h-icon-ring:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-ring.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-ring.h-icon-fast > g {
+  animation: h-icon-ring 1s ease infinite;
+}
+
+.h-icon-ring:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-ring.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-ring.h-icon-slow > g {
+  animation: h-icon-ring 3s ease infinite;
+}
+
+@keyframes h-icon-ring {
+  0% { transform: rotate(-15deg); }
+  2% { transform: rotate(15deg); }
+  4%, 12% { transform: rotate(-18deg); }
+  6% { transform: rotate(18deg); }
+  8% { transform: rotate(-22deg); }
+  10% { transform: rotate(22deg); }
+  12% { transform: rotate(-18deg); }
+  14% { transform: rotate(18deg); }
+  16% { transform: rotate(-12deg); }
+  18% { transform: rotate(12deg); }
+  20%, 100% { transform: rotate(0deg); }
+}
+
+/* ---------------- pulse ---------------- */
+.h-icon-pulse:not(.h-icon-hover) > g,
+.h-icon-pulse.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-pulse > g {
+  animation: h-icon-pulse 2s linear infinite;
+}
+
+.h-icon-pulse:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-pulse.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-pulse.h-icon-fast > g {
+  animation: h-icon-pulse 1s linear infinite;
+}
+
+.h-icon-pulse:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-pulse.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-pulse.h-icon-slow > g {
+  animation: h-icon-pulse 3s linear infinite;
+}
+
+@keyframes h-icon-pulse {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1.1); }
+}
+
+/* ---------------- flash ---------------- */
+.h-icon-flash:not(.h-icon-hover) > g,
+.h-icon-flash.h-icon-hover:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-flash > g {
+  animation: h-icon-flash 2s ease infinite;
+}
+
+.h-icon-flash:not(.h-icon-hover).h-icon-fast > g,
+.h-icon-flash.h-icon-hover.h-icon-fast:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-flash.h-icon-fast > g {
+  animation: h-icon-flash 1s ease infinite;
+}
+
+.h-icon-flash:not(.h-icon-hover).h-icon-slow > g,
+.h-icon-flash.h-icon-hover.h-icon-slow:hover > g,
+.h-icon-parent.h-icon-hover:hover > .h-icon-flash.h-icon-slow > g {
+  animation: h-icon-flash 3s ease infinite;
+}
+
+@keyframes h-icon-flash {
+  0%, 100%, 50% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
