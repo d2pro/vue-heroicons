@@ -1,6 +1,6 @@
 # Vue Heroicons
 
-[![npm](https://img.shields.io/npm/v/oh-vue-icons.svg?style=flat-square)](https://www.npmjs.com/package/oh-vue-icons) ![downloads](https://img.shields.io/npm/dt/oh-vue-icons.svg?style=flat-square) [![license](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@d2pro/vue-heroicons.svg?style=flat-square)](https://www.npmjs.com/package/@d2pro/vue-heroicons) ![downloads](https://img.shields.io/npm/dt/@d2pro/vue-icons.svg?style=flat-square) [![license](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 
 A [Vue](https://vuejs.org/) component for including inline SVG icons from the awesome [Heroicons](https://heroicons.dev/) collection.
@@ -16,19 +16,13 @@ A [Vue](https://vuejs.org/) component for including inline SVG icons from the aw
 
 &nbsp;
 
-## Documentation
-
-Search for icons and view the documentation [here](https://oh-vue-icons.vercel.app).
-
-
-&nbsp;
 
 ## Installation
 
 ```bash
-yarn add oh-vue-icons
+yarn add @d2pro/vue-heroicons
 # or
-npm install oh-vue-icons
+npm install @d2pro/vue-heroicons
 ```
 
 
@@ -38,7 +32,7 @@ npm install oh-vue-icons
 
 ### Global Import
 
-Import `oh-vue-icons` and install it into Vue in `main.js`. You can only import the icons you need to reduce the bundle size.
+Import `@d2pro/vue-heroicons` and install it into Vue in `main.js`. You can only import the icons you need to reduce the bundle size.
 
 #### Vue 2
 
@@ -46,12 +40,12 @@ Import `oh-vue-icons` and install it into Vue in `main.js`. You can only import 
 // main.js
 import Vue from "vue";
 import App from "./App.vue";
-import OhVueIcon from "oh-vue-icons/components/icon";
+import VueHeroicons from "@d2pro/vue-heroicons/components/icon";
 
-import { FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
-OhVueIcon.add([FaFlag, RiZhihuFill]);
+import { Archive, Ban, Check } from "@d2pro/vue-heroicons/icons";
+VueHeroicons.add([Archive, Ban, Check]);
 
-Vue.component("v-icon", OhVueIcon);
+Vue.component("h-icon", VueHeroicons);
 
 new Vue({
   render: h => h(App)
@@ -62,39 +56,25 @@ If you don't care about the bundle size and want to import a whole icon pack, yo
 
 ```js
 // main.js
-// import Font Awesome
-import * as FaIcons from "oh-vue-icons/icons/fa";
+import * as IconsOutlined from "@d2pro/vue-heroicons/icons/ho";
+import * as IconsSolid from "@d2pro/vue-heroicons/icons/hs";
 
-const Fa = Object.values({ ...FaIcons });
-OhVueIcon.add(Fa);
+const ho = Object.values({ ...IconsOutlined });
+const hs = Object.values({ ...IconsOutlined });
+
+VueHeroicons.add(ho);
+VueHeroicons.add(hs);
 ```
 
-#### Vue 3
-
-```js
-// main.js
-import { createApp } from "vue";
-import App from "./App.vue";
-import OhVueIcon from "oh-vue-icons/components/icon-v3";
-
-import { FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
-OhVueIcon.add([FaFlag, RiZhihuFill]);
-
-const app = createApp(App);
-app.component("v-icon", OhVueIcon);
-app.mount("#app");
-```
-
-&nbsp;
 
 ### Local Import
 
 ```js
-import OhVueIcon from "oh-vue-icons/components/icon";
+import VueHeroicon from "@d2pro/vue-heroicons/components/icon";
 
 export default {
   components: {
-    "v-icon": OhVueIcon
+    "h-icon": VueHeroicon
   }
 };
 ```
@@ -109,15 +89,13 @@ The icon names should be passed using **kebab-case**.
 ```html
 <template>
   <div>
-    <v-icon name="fa-flag" />
-    <v-icon name="ri-zhihu-fill" />
+    <v-icon name="arrow-left" />
+    <v-icon name="arrow-narrow-left" solid />
   </div>
 </template>
 ```
 
-For [Font Awesome 5](https://fontawesome.com/) icons, icons from `regular` pack have name prop values like `fa-regular-flag`. Icons from `solid` and `brands` pack have name prop values like `fa-beer` and `fa-github`.
-
-See the [documentation](https://oh-vue-icons.vercel.app/docs#basic-usage) for more about the usage.
+Check [Heroicons project page](https://heroicons.dev/) for a complete list of all available icons (outlined and solid).
 
 
 &nbsp;
@@ -126,30 +104,27 @@ See the [documentation](https://oh-vue-icons.vercel.app/docs#basic-usage) for mo
 
 | Name        | Description                              | Type      | Accepted Values                                               | Default value  |
 | ----------- | ---------------------------------------- | --------- | ------------------------------------------------------------- | -------------- |
-| `scale`     | Icon size                                | `number`  | /                                                             | `1`            |
-| `animation` | Type of animation                        | `string`  | `wrench` / `ring` / `pulse` / `spin` / `spin-pulse` / `flash` | /              |
-| `speed`     | Animation speed                          | `string`  | `slow` / `fast`                                               | /              |
+| `name`      | Name of the icon (kebab-case)            | `string`  | Check [Heroicons project page](https://heroicons.dev/)        |                |
+| `solid`     | Use the 'solid' version of teh icon      | `boolean` | `true` / `false`                                              | `false`        |
+| `animation` | Type of animation                        | `string`  | `wrench` / `ring` / `pulse` / `spin` / `spin-pulse` / `flash` |                |
+| `speed`     | Animation speed                          | `string`  | `slow` / `fast`                                               |                |
 | `hover`     | Enable animation only when being hovered | `boolean` | `true` / `false`                                              | `false`        |
-| `flip`      | Used to flip icon                        | `string`  | `vertical` / `horizontal` / `both`                            | /              |
-| `fill`      | Fill color of icon                       | `string`  | HEX color code or color name                                  | `currentColor` |
-| `label`     | Icon lable                               | `string`  | /                                                             | /              |
-| `title`     | Icon title                               | `string`  | /                                                             | /              |
-| `inverse`   | Make icon color white?                   | `boolean` | `true` / `false`                                              | `false`        |
-
-Some examples could be found in the [documentation](https://oh-vue-icons.vercel.app/docs#examples).
+| `flip`      | Used to flip icon                        | `string`  | `vertical` / `horizontal` / `both`                            |                |
+| `label`     | Icon label                               | `string`  |                                                               |                |
+| `title`     | Icon title                               | `string`  |                                                               |                |
 
 
 &nbsp;
 
 ## Nuxt.js
 
-When using Nuxt.js for server side rendering, `oh-vue-icons` should be added to the transpile build option in `nuxt.config.js`:
+When using Nuxt.js for server side rendering, `@d2pro/vue-heroicons` should be added to the transpile build option in `nuxt.config.js`:
 
 ```js
 export default {
   // ...
   build: {
-    transpile: ["oh-vue-icons"]
+    transpile: ["@d2pro/vue-heroicons"]
   }
 }
 ```
@@ -168,11 +143,11 @@ Contributions are welcomed, learn how to contribute [here](CONTRIBUTING.md).
 
 ## Acknowledgements
 
-This project is inspired by and based on [vue-awesome](https://github.com/Justineo/vue-awesome) and [react-icons](https://github.com/react-icons/react-icons).
+This project is inspired by and based on .
 
 
 &nbsp;
 
 ## License
 
-This project is [MIT](LICENSE) licensed. Icons are taken from [other projects](#supported-icon-packs), so check the license of each accordingly.
+This project is [MIT](LICENSE) licensed. Icons are taken from [Heroicons](https://heroicons.dev/), so check the license of that project accordingly.
