@@ -143,7 +143,7 @@ Contributions are welcomed, learn how to contribute [here](CONTRIBUTING.md).
 
 ## Acknowledgements
 
-This project is inspired by and based on .
+This project is inspired by and based on [Oh Vue Icons!](https://github.com/Renovamen/oh-vue-icons) from Xiaohan Zou (@Renovamen).
 
 
 &nbsp;
