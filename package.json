@@ -1,6 +1,6 @@
 {
   "name": "@d2pro/vue-heroicons",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Vue component to use SVG inline icons from the awesome Heroicons collection.",
   "keywords": [
     "heroicons",
