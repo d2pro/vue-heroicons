@@ -7,7 +7,7 @@ module.exports = {
       name: "heroicons-outlined",
       contents: [
         {
-          files: path.resolve(__dirname, "heroicons/optimized/outline/*.svg"),
+          files: path.resolve(__dirname, "heroicons/optimized/24/outline/*.svg"),
           formatter: (name) => `${name}`,
           prefix: (name) => `${name}`,
           scale: 1
@@ -23,7 +23,7 @@ module.exports = {
       name: "heroicons-solid",
       contents: [
         {
-          files: path.resolve(__dirname, "heroicons/optimized/solid/*.svg"),
+          files: path.resolve(__dirname, "heroicons/optimized/24/solid/*.svg"),
           formatter: (name) => `Solid${name}`,
           prefix: (name) => `solid-${name}`,
           scale: 1
